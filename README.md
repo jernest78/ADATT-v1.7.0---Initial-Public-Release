@@ -7,7 +7,7 @@
 
 **Offboarding Without Missed Steps: ADATT for Hybrid AD & Entra ID Environments**
 
-Transform your user termination process from 35 minutes of manual clicking to 60 seconds of automated perfection. ADATT handles AD, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically.
+Transform your user termination process from 35 minutes of manual clicking to 60 seconds of automated perfection. ADATT handles AD, Microsoft 365, MFA, groups, sessions, Bulk termination (2-100 max) at once,  and generates compliance-ready reports automatically.
 
 ---
 
