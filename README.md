@@ -1,4 +1,4 @@
-# Automated Employee Offboarding Tool for IT Admins in Hybrid (AD & Microsoft Entra ID) Environments -digitally signed by esigner provider.
+# Automated Employee Offboarding Tool for IT Admins in Hybrid (AD & Microsoft Entra ID) Environments -digitally signed by esigner.
 Transform your user termination process from 35 minutes of manual clicking to 60 seconds of automated perfection. ADATT handles AD, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically.
 
 **NEW in v1.5.0:** Full support for cloud Microsoft Entra ID users, Active Directory, Hybrid and cloud environments, intelligent mailbox detection, confirmation dialogs, and 5x faster bulk processing!
