@@ -4,7 +4,8 @@ Transform your user termination process from 35 minutes of manual clicking to 60
 **NEW in v1.5.0:** Full support for cloud Microsoft Entra ID users, Active Directory, Hybrid and cloud environments, intelligent mailbox detection, confirmation dialogs, and 5x faster bulk processing!
 
 ---
-<img width="1189" height="816" alt="Adatt-GUI" src="https://github.com/user-attachments/assets/acd64ac5-e699-48b6-bc69-cc4232439e96" />
+<img width="1182" height="813" alt="adattgui-screen" src="https://github.com/user-attachments/assets/37800c00-7cf5-473a-9131-d638c61a95a3" />
+
 
 
 
