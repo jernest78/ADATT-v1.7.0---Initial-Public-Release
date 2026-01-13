@@ -1,14 +1,49 @@
 # Automated Employee Offboarding Tool for IT Admins in Hybrid (AD & Microsoft Entra ID) Environments -digitally signed by esigner.
-Transform your user termination process from 35 minutes of manual clicking to 60 seconds of automated perfection. ADATT handles AD, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically.
 
-**NEW in v1.5.0:** Full support for cloud Microsoft Entra ID users, Active Directory, Hybrid and cloud environments, intelligent mailbox detection, confirmation dialogs, and 5x faster bulk processing!
+**NEW in v1.6.0:** Full support for cloud Microsoft Entra ID users, Active Directory, Hybrid and cloud environments, intelligent mailbox detection, confirmation dialogs, and 5x faster bulk processing!
 
 ---
 <img width="1182" height="813" alt="adattgui-screen" src="https://github.com/user-attachments/assets/37800c00-7cf5-473a-9131-d638c61a95a3" />
 
+========================================
+  ADATT - Active Directory + Azure/M365 
+  Termination Tool
+  Version 1.6.0
+========================================
 
+WELCOME!
 
+Thank you for trying ADATT! This professional tool automates user termination 
+across Active Directory and Microsoft 365, including:
 
+✓ Single user termination with auto-reply setup
+✓ Bulk offboarding (up to 100 users)
+✓ MFA reset
+✓ Remove registered devices
+✓ Session sign-out
+✓ Manager auto-population
+✓ Detailed audit logging and CSV reports
+
+🆕 NEW IN v1.6.0:
+✓ Remove Registered Devices - View and remove user devices with dates
+✓ First-launch email setup wizard - Guided configuration
+✓ Improved startup - No module reinstall every launch
+✓ Cornflower blue UI theme - Modern, professional appearance
+✓ Better button layout - Help moved to footer, all buttons visible
+✓ Graceful connection handling - No errors on user cancellation
+✓ Updated Discord community link
+
+🌟 FEATURES FROM v1.5.0:
+✓ App registration removal (auto-removes apps owned by terminated users)
+✓ Service principal removal (removes associated service principals)
+✓ Enhanced role assignment removal for privileged users
+✓ Progress bar color feedback (green=success, red=errors)
+✓ Sound notifications (audio feedback for operations)
+✓ JSON audit log export (structured compliance records)
+✓ Bulk termination enhancements (full feature parity with single)
+✓ Cloud-Only Entra ID user support (no AD account required)
+✓ Intelligent mailbox detection (skips Exchange ops when no mailbox)
+✓ Confirmation dialog before termination (prevents accidents)
 ## 🚀 Features
 
 ### Core Capabilities
