@@ -12,7 +12,7 @@
 ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically—all through an intuitive graphical interface.
 
 **What's New in v1.6.0:** Enhanced email notifications for terminated users, automated reporting to IT admins, and improved cloud-only user support with intelligent mailbox detection!
-<img width="2800" height="1857" alt="adatt-Interface" src="https://github.com/user-attachments/assets/3f816f9a-219c-4490-97fc-b6d25c2aa34a" />
+<img width="2800" height="1857" alt="adatt-Interface" src="https://github.com/user-attachments/assets/cecca0be-8b9a-4867-b34d-236e458625e2" />
 
 ---
 
@@ -21,7 +21,7 @@ ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and genera
 ### Core Capabilities
 - ✅ **Single User Termination** - Complete offboarding in 60 seconds
 - ✅ **Bulk Offboarding** - Process 2-100 users simultaneously with CSV/TXT import
-- ✅ **Cloud-Only User Support** - Works with Entra ID-only accounts (no AD required) 🆕
+- ✅ **Universal Account Support** - Works with On-Premises AD, Hybrid (AD + Entra ID), and Cloud-Only (Entra ID) accounts 🆕
 - ✅ **Intelligent Mailbox Detection** - Skips Exchange ops when no mailbox assigned 🆕
 - ✅ **MFA Reset** - Remove ALL authentication methods (Phone, Authenticator, FIDO2, etc.)
 - ✅ **Session Management** - Sign out users from all active Microsoft 365 sessions
@@ -561,13 +561,6 @@ ADATT can automatically email CSV reports to IT administrators:
 - `Mail.Send` API scope granted
 - Sent from authenticated Graph user account
 
-#### Enable/Disable Email Notifications
-Edit `ADATT-UX.ps1` (line 35):
-```powershell
-$script:ENABLE_EMAIL_NOTIFICATIONS = $true   # Enable
-$script:ENABLE_EMAIL_NOTIFICATIONS = $false  # Disable
-```
-
 ### Open Reports Folder
 Click the **"Open Reports"** button in ADATT UI to instantly open the Reports folder in File Explorer.
 
@@ -593,19 +586,11 @@ Click the **"Open Reports"** button in ADATT UI to instantly open the Reports fo
 - No password storage
 - Session tokens managed by ExchangeOnlineManagement module
 
-### License Security
-
 #### License Validation
 - Hardware fingerprinting (non-reversible hash)
 - License keys validated against LemonSqueezy Cloudflare Worker
 - Revalidation every 7 days (configurable)
 - 30-day offline grace period
-
-#### License Storage
-- License file: `<Script Root>\license-<HardwareID>.json`
-- Encrypted using Windows DPAPI (Data Protection API)
-- Only decryptable by the user account that activated
-- Cannot be copied to other machines
 
 #### Hardware Change Protection
 - Allows up to 2 hardware changes (e.g., RAM upgrade, NIC replacement)
@@ -632,25 +617,8 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **Security Implications**:
-- `RemoteSigned`: Allows local scripts, requires signature for downloaded scripts
-- Recommended for production environments
-- Alternative: `Unrestricted` (less secure, not recommended)
+- `RemoteSigned`: ADATT has been digitally signed - Pubisher: UNIF
 
-### Network Security
-
-#### Required Outbound Connections
-- **Microsoft Graph API**: `https://graph.microsoft.com`
-- **Exchange Online**: `https://outlook.office365.com`
-- **Azure AD**: `https://login.microsoftonline.com`
-- **License Validation**: `https://adatt-activator.adatt.workers.dev`
-- **LemonSqueezy**: `https://api.lemonsqueezy.com` (license activation only)
-
-#### Firewall Requirements
-Allow outbound HTTPS (port 443) to:
-- `*.microsoftonline.com`
-- `*.microsoft.com`
-- `*.lemonsqueezy.com`
-- `adatt-activator.adatt.workers.dev`
 
 ### Compliance Considerations
 
@@ -830,9 +798,9 @@ This tool was born from frustration with manual offboarding processes and the la
 | Plan | Devices | Price | Best For |
 |------|---------|-------|----------|
 | **Trial** | Any | FREE for 14 days | Evaluation |
-| **Solo Admin** | 1 | $119 | Individual IT admins |
-| **Team** | 5 | $279 | IT teams, small MSPs |
-| **Business** | 20 | $479 | Enterprises, large MSPs |
+| **Solo Admin** | 1 | $175 | Individual IT admins |
+| **Team** | 5 | $599 | IT teams, small MSPs |
+| **Business** | 1499 | $479 | Enterprises, large MSPs |
 
 **One-time payment. Lifetime access. Free updates.**
 
