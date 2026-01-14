@@ -12,10 +12,9 @@
 ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically—all through an intuitive graphical interface.
 
 **What's New in v1.6.0:** Enhanced email notifications for terminated users, automated reporting to IT admins, and improved cloud-only user support with intelligent mailbox detection!
+<img width="2800" height="1857" alt="adatt-Interface" src="https://github.com/user-attachments/assets/3f816f9a-219c-4490-97fc-b6d25c2aa34a" />
 
 ---
-<img width="2800" height="1857" alt="adatt-Interface" src="https://github.com/user-attachments/assets/aebd7f06-dd02-4b94-b63e-2d1fd124e596" />
-
 
 ## 🚀 Features
 
@@ -27,6 +26,7 @@ ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and genera
 - ✅ **MFA Reset** - Remove ALL authentication methods (Phone, Authenticator, FIDO2, etc.)
 - ✅ **Session Management** - Sign out users from all active Microsoft 365 sessions
 - ✅ **Auto-Reply Configuration** - Set mailbox auto-replies with custom messages
+- ✅ **Email Notifications** - Automated reports sent to IT admins with CSV attachments 🆕
 - ✅ **Audit Reports** - Auto-generate CSV reports with timestamps and account types
 
 ### Account Type Support 🆕
@@ -71,6 +71,9 @@ All operations automatically detect account type and adjust accordingly!
    - Records who performed termination and when
    - Tracks success/failure for each operation
    - Documents mailbox operation status 🆕
+   - Sends email notifications to IT admins with report attachments 🆕
+   - Auto-detects technician email from Active Directory
+   - Optional manager notification
 
 ---
 
