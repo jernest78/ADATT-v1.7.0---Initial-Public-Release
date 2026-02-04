@@ -11,12 +11,7 @@
 
 ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically—all through an intuitive graphical interface.
 
-**What's New in v1.6.0:** Enhanced email notifications for terminated users, automated reporting to IT admins, and improved cloud-only user support with intelligent mailbox detection!
-
-
-<img width="2192" height="1511" alt="ADATT-GUI" src="https://github.com/user-attachments/assets/751ea2e4-1527-48c7-92fa-90c7db09316b" />
-
-
+**What's New in v1.7.0:** Advanced license reclamation tracking, pre-flight checks for critical groups, progress indicators, enhanced audit logging with before/after snapshots, and consumer email domain blocking!
 
 ---
 
@@ -132,14 +127,14 @@ ADATT requests these scopes during first connection:
 
 1. **Download the Package**
    - Visit: [ADATT Releases](https://adatt.lemonsqueezy.com)
-   - Download: `ADATT-v1.6.0-Package.zip`
-   - Extract and run `ADATT-v1.6.0.msi` from the package
+   - Download: `ADATT-v1.7.0-Package.zip`
+   - Extract and run `ADATT-v1.7.0.msi` from the package
 
 2. **Run the MSI Installer**
    ```powershell
-   # Double-click the ADATT-v1.6.0.msi file
+   # Double-click the ADATT-v1.7.0.msi file
    # Or run from command line:
-   msiexec /i ADATT-v1.6.0.msi
+   msiexec /i ADATT-v1.7.0.msi
    ```
 
 3. **Follow Installation Wizard**
@@ -158,7 +153,7 @@ ADATT requests these scopes during first connection:
 ### Method 2: Portable (No Installation)
 
 1. **Download the Same Package**
-   - Download: `ADATT-v1.6.0-Package.zip` (same as Method 1)
+   - Download: `ADATT-v1.7.0-Package.zip` (same as Method 1)
    - Contains both MSI installer and portable files
 
 2. **Extract Files for Portable Use**
@@ -450,14 +445,6 @@ Preview displays:
 - Click **"Open Reports"** button for quick access
 - Email notification sent with CSV attachment (if enabled)
 
-**Report Columns**:
-```csv
-SamAccountName,DisplayName,AccountType,Status,DisabledBy,DisabledDate,ErrorMessage
-john.doe,John Doe,Hybrid,Disabled,DOMAIN\admin,2026-01-14 10:30:15,
-jane.smith,Jane Smith,Cloud-Only,Disabled,admin@contoso.com,2026-01-14 10:30:18,
-bob.jones,Bob Jones,On-Premises,Disabled,DOMAIN\admin,2026-01-14 10:30:20,
-invalid.user,Unknown,Unknown,Failed,N/A,N/A,User not found in AD or Entra ID
-```
 
 ### Reset MFA
 
@@ -520,8 +507,7 @@ jdoe,John Doe,jdoe@contoso.com,Disabled,DOMAIN\admin,2026-01-14 14:30:15,Hybrid 
 ```csv
 SamAccountName,DisplayName,AccountType,Status,DisabledBy,DisabledDate,ErrorMessage,MailboxConverted,LicensesRemoved,MFACleared
 john.doe,John Doe,Hybrid,Disabled,DOMAIN\admin,2026-01-14 14:30:15,,Yes,Yes,Yes
-jane.smith,Jane Smith,Cloud-Only,Disabled,admin@contoso.com,2026-01-14 14:30:18,,Yes,Yes,Yes
-invalid.user,Unknown,Unknown,Failed,N/A,N/A,User not found in AD or Entra ID,No,No,No
+
 ```
 
 **Columns**:
@@ -565,6 +551,13 @@ ADATT can automatically email CSV reports to IT administrators:
 - `Mail.Send` API scope granted
 - Sent from authenticated Graph user account
 
+#### Enable/Disable Email Notifications
+Edit `ADATT-UX.ps1` (line 35):
+```powershell
+$script:ENABLE_EMAIL_NOTIFICATIONS = $true   # Enable
+$script:ENABLE_EMAIL_NOTIFICATIONS = $false  # Disable
+```
+
 ### Open Reports Folder
 Click the **"Open Reports"** button in ADATT UI to instantly open the Reports folder in File Explorer.
 
@@ -590,11 +583,19 @@ Click the **"Open Reports"** button in ADATT UI to instantly open the Reports fo
 - No password storage
 - Session tokens managed by ExchangeOnlineManagement module
 
+### License Security
+
 #### License Validation
 - Hardware fingerprinting (non-reversible hash)
 - License keys validated against LemonSqueezy Cloudflare Worker
 - Revalidation every 7 days (configurable)
 - 30-day offline grace period
+
+#### License Storage
+- License file: `<Script Root>\license-<HardwareID>.json`
+- Encrypted using Windows DPAPI (Data Protection API)
+- Only decryptable by the user account that activated
+- Cannot be copied to other machines
 
 #### Hardware Change Protection
 - Allows up to 2 hardware changes (e.g., RAM upgrade, NIC replacement)
@@ -621,7 +622,9 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 **Security Implications**:
-- `RemoteSigned`: ADATT has been digitally signed - Pubisher: UNIF
+- `RemoteSigned`: Allows local scripts, requires signature for downloaded scripts
+- Recommended for production environments
+- Alternative: `Unrestricted` (less secure, not recommended)
 
 
 ### Compliance Considerations
@@ -695,9 +698,9 @@ This software is licensed, not sold. By installing and using ADATT, you agree to
 
 **License Types**:
 - **Trial**: 14 days, all features, no credit card required
-- **Solo Admin**: 1 device, $119 (one-time payment, lifetime access)
-- **Team**: 5 devices, $279 (one-time payment, lifetime access)
-- **Business**: 20 devices, $479 (one-time payment, lifetime access)
+- **Solo Admin**: 1 device, $299 (one-time payment, lifetime access)
+- **Team**: 5 devices, $799 (one-time payment, lifetime access)
+- **Business**: 20 devices, $1999 (one-time payment, lifetime access)
 
 **🚀 LAUNCH SPECIAL**: First 100 customers get **20% OFF** - Use code: **LAUNCH20**
 
@@ -799,14 +802,13 @@ This tool was born from frustration with manual offboarding processes and the la
 
 ### Pricing
 
-| Plan           | Devices    | Price | Best For |
-|------|---------|-------|----------  |
-| **Trial**      | Any   | FREE for 14 days | Evaluation |
-| **Solo Admin** | 1     | $175       | Individual IT admins |
-| **Team**       | 5     | $599       | IT teams, small MSPs |
-| **Business**   |       | $1599      | Enterprises, large MSPs |
+| Plan | Devices | Price | Best For |
+|------|---------|-------|----------|
+| **Trial** | Any | FREE for 14 days | Evaluation |
+| **Solo Admin** | 1 | $299 | Individual IT admins |
+| **Team** | 5 | $799 | IT teams, small MSPs |
+| **Business** | 20 | $1999 | Enterprises, large MSPs |
 
 **One-time payment. Lifetime access. Free updates.**
 
 **🎉 LAUNCH OFFER**: Use code **LAUNCH20** for 20% off (first 100 customers)
-Visit: https://adatt.lemonsqueezy.com
