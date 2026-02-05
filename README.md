@@ -1,4 +1,4 @@
-# ADATT - Active Directory Automated Termination Tool
+# ADATT - Employee Offboarding Automation for Active Directory and Microsoft Entra ID
 
 ![Version](https://img.shields.io/badge/version-1.6.0-blue)
 ![License](https://img.shields.io/badge/license-Commercial-green)
@@ -7,7 +7,7 @@
 
 ## 👋 Welcome
 
-**ADATT** (Employee Offboarding Automation for Active Directory and Microsoft Entra ID) is a professional employee offboarding solution designed for IT administrators managing hybrid environments. Transform your user termination process from 35 minutes of manual clicking to 60 seconds of automated perfection.
+**ADATT** is a professional employee offboarding solution designed for IT administrators managing hybrid environments. Transform your user termination process from 35 minutes of manual clicking to 60 seconds of automated perfection.
 
 ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and generates compliance-ready reports automatically—all through an intuitive graphical interface.
 
