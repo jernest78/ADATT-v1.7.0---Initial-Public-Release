@@ -14,8 +14,8 @@ ADATT handles Active Directory, Microsoft 365, MFA, groups, sessions, and genera
 **What's New in v1.7.0:** Advanced license reclamation tracking, pre-flight checks for critical groups, progress indicators, enhanced audit logging with before/after snapshots, and consumer email domain blocking!
 
 ---
+<img width="3361" height="2317" alt="adattGui" src="https://github.com/user-attachments/assets/ae2f6929-27c6-4a86-8148-e733f9d02e61" />
 
-<img width="1179" height="781" alt="ADATT Screen" src="https://github.com/user-attachments/assets/6121a854-89af-45e1-8223-90ea55cbebd4" />
 
 
 
