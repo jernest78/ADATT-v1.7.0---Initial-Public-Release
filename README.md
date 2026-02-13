@@ -799,7 +799,7 @@ This tool was born from frustration with manual offboarding processes and the la
 
 | Plan | Devices | Price | Best For |
 |------|---------|-------|----------|
-| **Trial** | Any | FREE for 14 days | Evaluation |
+
 | **Solo Admin** | 1 | $299 | Individual IT admins |
 | **Team** | 5 | $799 | IT teams, small MSPs |
 | **Business** | 20 | $1999 | Enterprises, large MSPs |
